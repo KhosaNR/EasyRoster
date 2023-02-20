@@ -1,0 +1,17 @@
+body {
+  font-family: 'Calibri', sans-serif;
+  font-size: 40px;
+  font-style: italic;
+}
+
+input.ng-valid {
+  background-color: lightgreen;
+}
+
+input.ng-pristine {
+  background-color: none!important;
+}
+
+.teal-color {
+  background-color: turquoise;
+}

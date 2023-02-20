@@ -1,0 +1,73 @@
+<div class="mb-8">
+  <h2 id="tableLabel" *ngIf="isNewCustomer">Customer Create</h2>
+  <h2 id="tableLabel" *ngIf="!isNewCustomer">Customer Details</h2>
+  <br />
+</div>
+<form class="row g-3 needs-validation" [formGroup]="createCustomerForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="row mb-2">
+    <div class="col-sm-2 text-end">
+      <label for="groupInputType" class="col-sm-2 col-form-label">Type</label>
+    </div>
+    <div class="col-sm-2">
+      <select class="form-select" aria-label="Default select example" id="groupInputType" formControlName="type">
+        <option value="" disabled selected>Select one</option>
+        <option value="Person">Person</option>
+        <option value="Business">Business</option>
+      </select>
+      <div class="invalid-feedback">
+        You must select type.
+      </div>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <label for="groupInputType" class="col-sm-2 col-form-label text-end">First Name</label>
+    <div class="col-sm-3">
+      <input type="text" class="col-sm-3 form-control" id="colFormLabelSm" placeholder="Simple" formControlName="firstName">
+      <div class="invalid-feedback">
+        You must supply a valid first name.
+      </div>
+    </div>
+    <label for="groupInputType" class="col-sm-2 col-form-label text-end">Surname</label>
+    <div class="col-sm-3">
+      <input type="text" class="col-sm-3 form-control" id="colFormLabelSm" placeholder="Joe" formControlName="surname">
+      <div class="invalid-feedback">
+        Please supply a valid surname.
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <label for="groupInputType" class="col-sm-2 col-form-label text-end">Email</label>
+    <div class="col-sm-3">
+      <input type="email" class="col-sm-3 form-control"  id="colFormLabelSm" placeholder="simple.joe@adaptit.com" formControlName="email" ngModel emailModel>
+      <div *ngIf="createCustomerForm.controls['email'].errors?.emailExists && (createCustomerForm.controls['email'].dirty || createCustomerForm.controls['email'].touched)" class="alert alert-danger">
+        Email address already in use.
+      </div>
+    </div>
+    <label for="groupInputType" class="col-sm-2 col-form-label text-end">Cellphone</label>
+    <div class="col-sm-3">
+      <input type="tel" class="col-sm-3 form-control" id="colFormLabelSm" placeholder="081400500" formControlName="cellphone" ng-minLength="10">
+      <div class="invalid-feedback">
+        Please supply a valid cellphone number.
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <label for="groupInputType" class="col-sm-2 col-form-label text-end">Amount total</label>
+    <div class="col-sm-3">
+      <input type="number" class="col-sm-3 form-control" id="colFormLabelSm" placeholder="0" formControlName="invoiceTotal">
+    </div>
+  </div>
+
+  <div class="row mb-2 mr-1 mt-2 ">
+
+    <div class="col-auto col-form-label text-end">
+      <button mat-raised-button color="primary" class="teal-color" routerLink="/customers">BACK TO LIST</button>
+      <button type="submit" mat-raised-button color="basic" *ngIf="isNewCustomer">SAVE</button>
+    </div>
+    <div class="col-auto col-form-label text-end" *ngIf="!isNewCustomer">
+      <button type="submit" mat-raised-button class="teal-color" >UPDATE</button>
+    </div>
+  </div>
+</form>

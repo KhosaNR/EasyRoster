@@ -1,0 +1,81 @@
+table {
+  width: 100%;
+}
+
+.mat-column-firstName, .mat-column-surname {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 18% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-email {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 25% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-cellphone, mat-column-invoiceTotal, .mat-column-actionb {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 17% !important;
+  width: 17% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-actionx {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+td.mat-cell a {
+  color: blue;
+  text-decoration: none;
+}
+
+  td.mat-cell a:hover {
+    text-decoration: underline;
+  }
+
+  td.mat-cell a:not(:last-child)::after {
+    content: " | ";
+  }
+
+.teal-color {
+  background-color: turquoise;
+}
+
+.mat-form-field-underline {
+  background-color: transparent;
+  border-bottom: 1px solid #ccc;
+}
